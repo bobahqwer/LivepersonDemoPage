@@ -36,6 +36,14 @@ const NavBar: React.FC = () => (
         >
           <span>{RoutesConfig.About.displayName}</span>
         </NavLink>
+        <NavLink
+          className='navbar-item'
+          to={RoutesConfig.Chatbot.path}
+          exact={RoutesConfig.Chatbot.exact}
+          activeClassName={RoutesConfig.Chatbot.activeClassName}
+        >
+          <span>{RoutesConfig.Chatbot.displayName}</span>
+        </NavLink>
         <div className='seperator' />
         <a
           target='_blank'

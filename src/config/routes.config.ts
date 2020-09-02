@@ -34,5 +34,16 @@ export const RoutesConfig = Object.freeze<Record<string, Route>>({
       title: 'About | ReactSeoFriendlySpaTemplate',
       description: 'About page description - limit of 160 characters (try for 150-155).'
     }
+  },
+  Chatbot: {
+    path: '/chatbot',
+    exact: true,
+    displayName: 'Chatbot',
+    activeClassName: 'is-active',
+    icon: 'info',
+    metaInfo: {
+      title: 'Chatbot | ReactSeoFriendlySpaTemplate',
+      description: 'Chatbot page description - limit of 160 characters (try for 150-155).'
+    }
   }
 });

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9a7247c0-6fee-48c2-a1ec-c7478fbb9840/resourceGroups/DemosRG-Win/providers/Microsoft.Web/sites/LivePersonDemoBot",
+    "appService.deploySubpath": "."
+}
