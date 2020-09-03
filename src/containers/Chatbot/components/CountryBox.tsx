@@ -7,10 +7,8 @@ interface CountryBoxProps {
 }
 interface CountryBoxState { }
 
-export default class CountryBox extends React.Component<
-  CountryBoxProps,
-  CountryBoxState
-  > {
+export default class CountryBox extends React.Component<CountryBoxProps, CountryBoxState> {
+
   constructor(props: CountryBoxProps) {
     super(props);
 
@@ -30,6 +28,7 @@ export default class CountryBox extends React.Component<
           <div className="flag">Flag: <img src={this.props.country.flag} /></div>
           <div>Languages:{" "}{this.props.country.languages.map((item) => item.name).join(", ")}</div>
           <div>{this.getEllipsisField("Borders", this.props.country.borders.join(", "), this.props.country.borders.length, 6)}</div>
+          <div>{this.getEllipsisField("Borders Names", this.props.country.bordersNames, this.props.country.borders.length, 3)}</div>
           <div>Region: {this.props.country.region}</div>
           <div>Subregion: {this.props.country.subregion}</div>
           <div>{this.getEllipsisField("Time zones", this.props.country.timezones.join(", "), this.props.country.timezones.length, 3)}</div>
@@ -43,8 +42,8 @@ export default class CountryBox extends React.Component<
 
   private getEllipsisField = (title, data, length, maxLength) => {
     return <>
-      <div className="ellipsis">{title}: {data}</div>
-      {length > 6 ? <span className="tooltiptext tooltip-top">{data}</span> : ""}
+      <div className="ellipsis">{title}: {data ? data : "None"}</div>
+      {length > maxLength ? <span className="tooltiptext tooltip-top">{data}</span> : ""}
     </>;
   };
 }

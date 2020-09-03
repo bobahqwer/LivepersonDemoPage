@@ -50,6 +50,16 @@ const NavBar: React.FC = () => (
           aria-label='GitHub'
           className='navbar-item'
           rel='noopener noreferrer'
+          href='https://github.com/bobahqwer/LivepersonDemoPage'
+        >
+          <span>GitHub</span>
+          <FontAwesomeIcon icon='external-link-alt' />
+        </a>
+        <a
+          target='_blank'
+          aria-label='GitHub'
+          className='navbar-item'
+          rel='noopener noreferrer'
           href='https://github.com/based-ghost'
         >
           <span>GitHub</span>

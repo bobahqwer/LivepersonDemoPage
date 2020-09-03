@@ -9,7 +9,7 @@ const Footer: React.FC = () => (
         aria-label='GitHub'
         rel='noopener noreferrer'
         className='button is-medium'
-        href='https://github.com/based-ghost'
+        href='https://github.com/bobahqwer/LivepersonDemoPage'
       >
         <FontAwesomeIcon icon={['fab', 'github']} />
       </a>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => (
         <FontAwesomeIcon icon={['fab', 'medium-m']} />
       </a>
     </div>
-    <div className='content'>ReactSeoFriendlySpaTemplate.com &copy; 2019</div>
+    <div className='content'>StarSites.com &copy; 2020</div>
   </footer>
 );
 

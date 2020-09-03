@@ -9,10 +9,7 @@ export default class DataProvider {
       );
       if (_bulkData) return resolve(JSON.parse(_bulkData));
 
-      const requestOptions = {
-        method: "GET",
-      };
-      fetch(GlobalConfig.ApiEndpoints.Chatbot.BulkData, requestOptions)
+      fetch(GlobalConfig.ApiEndpoints.Chatbot.BulkData)
         .then((response) => response.json())
         .then((data) => {
           localStorage.setItem(GlobalConfig.Keys.Chatbot.CountriesBulkData, JSON.stringify(data)); // save to browser storage
