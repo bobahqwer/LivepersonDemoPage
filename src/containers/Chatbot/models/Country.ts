@@ -7,6 +7,7 @@ export class CountryInfo {
   flag: string;
   languages: CountryLanguage[];
   borders: string[];
+  bordersNames?: string;
   region: string;
   subregion: string;
   timezones: string[];

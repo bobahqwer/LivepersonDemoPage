@@ -42,7 +42,7 @@ export const RoutesConfig = Object.freeze<Record<string, Route>>({
     activeClassName: 'is-active',
     icon: 'info',
     metaInfo: {
-      title: 'Chatbot | ReactSeoFriendlySpaTemplate',
+      title: 'Chatbot | Liveperson',
       description: 'Chatbot page description - limit of 160 characters (try for 150-155).'
     }
   }
