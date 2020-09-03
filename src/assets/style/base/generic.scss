@@ -21,6 +21,13 @@ code {
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+
 .view-wrapper {
   padding-top: $navbar-height;
 }
