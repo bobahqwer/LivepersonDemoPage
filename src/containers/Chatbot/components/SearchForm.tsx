@@ -6,6 +6,7 @@ import { SearchConfig } from "../../../config/search.config";
 import { FieldsSearchOrder } from "../models/Search";
 import { Helpers } from "../../../services/Helpers";
 import { LabelsConfig } from "../../../config/labels.config";
+import LPChatService from "../services/LPChatService";
 
 interface SearchFormProps { }
 interface SearchFormState {
@@ -75,7 +76,9 @@ export default class SearchForm extends React.Component<SearchFormProps, SearchF
     );
   }
 
-  //componentDidMount() { }
+  componentDidMount() {
+    //setTimeout(LPChatService.InitChat,3000);
+  }
   //componentDidUpdate() { }
 
   //#endregion
@@ -138,7 +141,7 @@ export default class SearchForm extends React.Component<SearchFormProps, SearchF
 
   // optimization of search responce: prepare optimize search data pool
   private getSearchPoolData = (text: string): CountryInfo[] => {
-    if (text.startsWith(this.prevUserInput) && this.prevUserInput.length + 1 == text.length) // user added a single character --> the shown results will be the recent data pool for search (quick responce)
+    if (text.startsWith(this.prevUserInput) && this.prevUserInput.length + 1 === text.length) // user added a single character --> the shown results will be the recent data pool for search (quick responce)
       return this.state.shownCountries;
     return this.allCountries;
   };
@@ -169,7 +172,7 @@ export default class SearchForm extends React.Component<SearchFormProps, SearchF
   //#region Events methods
 
   private onChangeSearchInput = (event) => {
-    const _text = event.target.value as string;
+    const _text = event ? event.target.value as string : this.prevUserInput;
 
     // in case user input less then N characters --> skip search
     if (_text.length < SearchConfig.MinSearchChars) {
@@ -190,6 +193,7 @@ export default class SearchForm extends React.Component<SearchFormProps, SearchF
 
   private onChangeBorderCheckbox = (event) => {
     this.isBorderCheckbox = event.target.checked;
+    this.onChangeSearchInput(null);
   };
 
   //#endregion

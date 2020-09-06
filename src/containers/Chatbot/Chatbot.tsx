@@ -9,12 +9,13 @@ import { FeatureList } from "../Home/components";
 import SearchForm from "./components/SearchForm";
 import { CountryInfoConfig, FeatureInfo } from "../../config/features.config";
 import { LabelsConfig } from "../../config/labels.config";
+import { Helpers } from "../../services/Helpers";
 
 const Chatbot: React.FC = () => {
   const _featureList = useMemo<FeatureInfo[]>(() => {
     return Object.keys(CountryInfoConfig).map((key) => CountryInfoConfig[key]);
   }, []);
-
+  
   return (
     <div id="chatbot" className="view-wrapper">
       <MetaInfo {...RoutesConfig.About.metaInfo} />

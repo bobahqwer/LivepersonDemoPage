@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 export class Helpers {
 
     // sort array of Jsons by property name (string)
@@ -23,10 +25,22 @@ export class Helpers {
 
         arrays.forEach(array => {
             array.forEach(item => {
-                if (_output.findIndex(o => o.name === item.name) == -1) _output.push(item);
+                if (_output.findIndex(o => o.name === item.name) === -1) _output.push(item);
             });
         })
 
         return _output;
+    };
+
+    static ImportScript(resourceUrl: string) { 
+        useEffect(() => {
+            const script = document.createElement('script');
+            script.src = resourceUrl;
+            script.async = true;
+            document.body.appendChild(script);
+            return () => {
+                document.body.removeChild(script);
+            }
+        }, [resourceUrl]);
     };
 }

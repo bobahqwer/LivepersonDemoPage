@@ -1,6 +1,5 @@
 import React from "react";
 import { CountryInfo } from "../models/Country";
-import DataProvider from "../services/DataProvider";
 
 interface CountryBoxProps {
   country: CountryInfo;
@@ -25,7 +24,7 @@ export default class CountryBox extends React.Component<CountryBoxProps, Country
           <div>Native name: {this.props.country.nativeName}</div>
           <div>Alpha 3 code: {this.props.country.alpha3Code}</div>
           <div>Capital: {this.props.country.capital}</div>
-          <div className="flag">Flag: <img src={this.props.country.flag} /></div>
+          <div className="flag">Flag: <img src={this.props.country.flag} alt={this.props.country.name} /></div>
           <div>Languages:{" "}{this.props.country.languages.map((item) => item.name).join(", ")}</div>
           <div>{this.getEllipsisField("Borders", this.props.country.borders.join(", "), this.props.country.borders.length, 6)}</div>
           <div>{this.getEllipsisField("Borders Names", this.props.country.bordersNames, this.props.country.borders.length, 3)}</div>

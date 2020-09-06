@@ -12,6 +12,7 @@ const MetaInfo: React.FC<MetaInfoProps> = React.memo(({ title, description }) =>
     <meta name='og:title' content={title} />
     <meta name='description' content={description} />
     <meta name='og:description' content={description} />
+    <script src="https://lpcdn.lpsnmedia.net/api/chat/public/lpChat.min.js" type="text/javascript" />
   </Helmet>
 ));
 
